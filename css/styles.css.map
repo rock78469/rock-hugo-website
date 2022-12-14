@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "/Users/rock/go/code/my-github/rock-hugo-source",
+	"sourceRoot": "/Users/rock/go/code/my-github/hugo/rock-hugo-source",
 	"sources": [
 		"themes/hugo-clarity/assets/sass/main.sass",
 		"themes/hugo-clarity/assets/sass/_variables.sass",
