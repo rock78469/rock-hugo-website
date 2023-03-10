@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nginx on Example Site</title><link>https://blog.rock86.space/tags/nginx/</link><description>Recent content in nginx on Example Site</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.rock86.space/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx GeoIP2 in Docker</title><link>https://blog.rock86.space/p/nginx-geoip2-in-docker/</link><pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/nginx-geoip2-in-docker/</guid><description>&lt;h3 id="資料夾結構">資料夾結構&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">├── GeoLite
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └── GeoLite2-City.mmdb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └── nginx.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── log
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── access.log
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └── error.log
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── dockerfile
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── docker-compose
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="step1-撰寫dockerfile">Step1. 撰寫Dockerfile&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-v" data-lang="v">&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">第一階段：編譯&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫和&lt;/span>&lt;span class="nc">Nginx&lt;/span>&lt;span class="err">模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">FROM&lt;/span> &lt;span class="nv">debian&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">buster&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">slim&lt;/span> &lt;span class="nc">AS&lt;/span> &lt;span class="nv">builder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="nc">FROM&lt;/span> &lt;span class="nv">debian&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">buster&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">slim&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">安裝必要的套件和工具&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">update&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">y&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">dev&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">build&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">essential&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">apt&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lists&lt;/span>&lt;span class="o">/*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、編譯和安裝&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//github.com/maxmind/libmaxminddb/releases/download/1.6.0/libmaxminddb-1.6.0.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">xvfz&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">ldconfig&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、編譯和安裝&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="err">模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//github.com/leev/ngx_http_geoip2_module/archive/master.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">xvfz&lt;/span> &lt;span class="nv">master&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="nv">master&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">mv&lt;/span> &lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">master&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">geoip2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、解壓縮和編譯&lt;/span>&lt;span class="nc">Pcre&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">zxvf&lt;/span> &lt;span class="nv">pcre&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">8.35&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">pcre&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">8.35&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nv">make&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、解壓縮和編譯&lt;/span>&lt;span class="nc">Zilb&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//zlib.net/zlib-1.2.13.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">zxvf&lt;/span> &lt;span class="nv">zlib&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.2.13&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">zlib&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.2.13&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nv">make&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、解壓縮和編譯&lt;/span>&lt;span class="nc">Nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//nginx.org/download/nginx-1.21.3.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">xvfz&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21.3&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21.3&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">with&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">compat&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">add&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">dynamic&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="kn">module&lt;/span>&lt;span class="o">=/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">geoip2&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="nv">modules&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">第二階段：構建最終映像&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">FROM&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mf">1.21.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">複製第一階段編譯的&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="err">模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">COPY&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">from&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">builder&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21.3&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">objs&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">so&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">modules&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">安裝&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫和相關工具&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">update&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">y&lt;/span> &lt;span class="nv">libmaxminddb0&lt;/span> &lt;span class="nv">mmdb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">bin&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">apt&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lists&lt;/span>&lt;span class="o">/*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">複製&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">COPY&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">from&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">builder&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">local&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">so&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">local&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">ADD&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nc">Country_20230221&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nc">Country&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">mmdb&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">share&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoIP&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">配置&lt;/span>&lt;span class="nc">Nginx&lt;/span>&lt;span class="err">，啟用&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="nc">RUN&lt;/span> &lt;span class="nv">sed&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">i&lt;/span> &lt;span class="s1">&amp;#39;/http {/a \ geoip2 /usr/share/GeoIP/GeoLite2-Country.mmdb {&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> auto_reload 60m;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_metadata_country_build&lt;/span>&lt;span class="s1"> metadata build_epoch;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_code&lt;/span>&lt;span class="s1"> country iso_code;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> }&amp;#39;&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">conf&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="nv">sed&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">i&lt;/span> &lt;span class="s1">&amp;#39;1 i load_module modules/ngx_http_geoip2_module.so;&amp;#39;&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">CMD&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;nginx&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;-g&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;daemon off;&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="step2-運行docker-commend進行打包image">Step2. 運行Docker commend，進行打包Image&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker build -t my-nginx .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Create folder&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># 放nginx.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkdir config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 放nginx access.log 和 error.log
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkdir log
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 放IP資料庫
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkdir GeoLite
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="step3-撰寫nginx-conf">Step3. 撰寫Nginx Conf&lt;/h2>
+&lt;p>log格式改為json格式&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-v" data-lang="v">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">load_module&lt;/span> &lt;span class="nv">modules&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">so&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">user&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">worker_processes&lt;/span> &lt;span class="nv">auto&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">error_log&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">log&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="kt">error&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">log&lt;/span> &lt;span class="nv">notice&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">pid&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">run&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">pid&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">events&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">worker_connections&lt;/span> &lt;span class="mi">1024&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">http&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">geoip2&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">share&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoIP&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nc">Country&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">mmdb&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">auto_reload&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="nv">m&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">自動重新載入時間間隔&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_name&lt;/span> &lt;span class="nv">city&lt;/span> &lt;span class="nv">names&lt;/span> &lt;span class="nv">en&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">市名&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_latitude&lt;/span> &lt;span class="nv">location&lt;/span> &lt;span class="nv">latitude&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">緯度&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_longitude&lt;/span> &lt;span class="nv">location&lt;/span> &lt;span class="nv">longitude&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">經度&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_iso_code&lt;/span> &lt;span class="nv">country&lt;/span> &lt;span class="nv">iso_code&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">國家&lt;/span>&lt;span class="nc">ISO&lt;/span>&lt;span class="err">代碼&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">include&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">mime&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">types&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">default_type&lt;/span> &lt;span class="nv">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">octet&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">stream&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="nv">log_format&lt;/span> &lt;span class="nv">main&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_addr&lt;/span>&lt;span class="s1"> - &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_user&lt;/span>&lt;span class="s1"> [&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">time_local&lt;/span>&lt;span class="s1">] &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request&lt;/span>&lt;span class="s1">&amp;#34; &amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">status&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">body_bytes_sent&lt;/span>&lt;span class="s1"> &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_referer&lt;/span>&lt;span class="s1">&amp;#34; &amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_user_agent&lt;/span>&lt;span class="s1">&amp;#34; &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_x_forwarded_for&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="nv">log_format&lt;/span> &lt;span class="nv">custom&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_addr&lt;/span>&lt;span class="s1"> - &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_user&lt;/span>&lt;span class="s1"> [&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">time_local&lt;/span>&lt;span class="s1">]&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request&lt;/span>&lt;span class="s1">&amp;#34; &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">status&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">body_bytes_sent&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_referer&lt;/span>&lt;span class="s1">&amp;#34; &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">host&lt;/span>&lt;span class="s1"> &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_user_agent&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request_time&lt;/span>&lt;span class="s1">&amp;#34; &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">upstream_connect_time&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_name&lt;/span>&lt;span class="s1">&amp;#34; &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_iso_code&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">log_format&lt;/span> &lt;span class="nv">main2&lt;/span> &lt;span class="s1">&amp;#39;{&amp;#34;remote_addr&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_addr&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;remote_user&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_user&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;time&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">time_local&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;request&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;status&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">status&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;body_bytes_sent&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">body_bytes_sent&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;http_referer&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_referer&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;host&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">host&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;http_user_agent&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_user_agent&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;request_time&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request_time&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;upstream_connect_time&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">upstream_connect_time&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_city_name&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_name&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_country_iso_code&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_iso_code&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_city_latitude&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_latitude&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_city_longitude&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_longitude&lt;/span>&lt;span class="s1">&amp;#34;}&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">access_log&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">log&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">access&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">log&lt;/span> &lt;span class="nv">main2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">sendfile&lt;/span> &lt;span class="nv">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cp">#tcp_nopush on;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">keepalive_timeout&lt;/span> &lt;span class="mi">65&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cp">#gzip on;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">include&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">conf&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">d&lt;/span>&lt;span class="o">/*&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">conf&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="step4-申請geolite-資料庫">Step4. 申請GeoLite 資料庫&lt;/h2>
+&lt;p>&lt;a class="link" href="https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en" target="_blank" rel="noopener"
+>註冊連結&lt;/a>&lt;/p>
+&lt;ol>
+&lt;li>點選註冊GeoIP2&lt;/li>
+&lt;li>輸入個人資料後點選 Continue，註冊完成&lt;/li>
+&lt;li>點選下載 &lt;a class="link" href="https://www.maxmind.com/en/accounts/current/geoip/downloads" target="_blank" rel="noopener"
+>下載頁面&lt;/a>&lt;/li>
+&lt;li>下載GeoLite2 City&lt;/li>
+&lt;li>將解壓縮後的 GeoLite2-City.mmdb 放到GeoLite資料夾&lt;/li>
+&lt;/ol>
+&lt;h2 id="step5-撰寫docker-composeyml">Step5. 撰寫Docker-compose.yml&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">version: &amp;#39;3.5&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">services:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> nginx:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> image: mynginx:latest
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> container_name: mynginx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ports:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - 8081:80
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> volumes:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - ./nginx/log:/var/log/nginx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - ./GeoLite/GeoLite2-City.mmdb:/usr/share/GeoIP
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> networks:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - nginx_network
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">networks:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> nginx_network
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name: nginx_network
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> driver: bridge
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="step6-run-mynginx">Step6. Run mynginx&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker-compose up -d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
