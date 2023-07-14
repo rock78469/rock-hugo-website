@@ -1,317 +1,76 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="How to install nginx Geoip2 plugin in docker"><title>Nginx GeoIP2 in Docker</title><link rel=canonical href=https://blog.rock86.space/p/nginx-geoip2-in-docker/><link rel=stylesheet href=/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css><meta property="og:title" content="Nginx GeoIP2 in Docker"><meta property="og:description" content="How to install nginx Geoip2 plugin in docker"><meta property="og:url" content="https://blog.rock86.space/p/nginx-geoip2-in-docker/"><meta property="og:site_name" content="RockChang's Blog"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="nginx"><meta property="article:tag" content="geoip"><meta property="article:published_time" content="2023-03-09T00:00:00+00:00"><meta property="article:modified_time" content="2023-03-09T00:00:00+00:00"><meta name=twitter:title content="Nginx GeoIP2 in Docker"><meta name=twitter:description content="How to install nginx Geoip2 plugin in docker"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切換選單>
+<!doctype html><html lang=zh-tw dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="How to install nginx Geoip2 plugin in docker"><title>Nginx GeoIP2 in Docker</title><link rel=canonical href=https://blog.rock86.space/p/nginx-geoip2-in-docker/><link rel=stylesheet href=/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css><meta property="og:title" content="Nginx GeoIP2 in Docker"><meta property="og:description" content="How to install nginx Geoip2 plugin in docker"><meta property="og:url" content="https://blog.rock86.space/p/nginx-geoip2-in-docker/"><meta property="og:site_name" content="RockChang's Blog"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="harbor"><meta property="article:published_time" content="2023-07-14T00:00:00+00:00"><meta property="article:modified_time" content="2023-07-14T00:00:00+00:00"><meta name=twitter:title content="Nginx GeoIP2 in Docker"><meta name=twitter:description content="How to install nginx Geoip2 plugin in docker"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切換選單>
 <span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_huec0d142758c85a9b57d7a4fe55133fd8_18819_300x0_resize_q75_box.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar></a>
-<span class=emoji>🪨</span></figure><div class=site-meta><h1 class=site-name><a href=/>RockChang's Blog</a></h1><h2 class=site-description>MIS|DevOps|SRE|工具筆記</h2></div></header><ol class=social-menu><li><a href=https://www.facebook.com/zhu.er.3/ target=_blank title=Facebook rel=me><svg style="color:#3882c7" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12H164.11V257.35H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51.0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81.0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291V478.66c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd" fill="#3882c7"/></svg></a></li><li><a href=https://github.com/rock78469 target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://www.instagram.com/r_o_c_k_c/ target=_blank title=Instagram rel=me><svg style="color:#fdb02b" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5_logos</title><path d="M349.33 69.33a93.62 93.62.0 0193.34 93.34V349.33a93.62 93.62.0 01-93.34 93.34H162.67a93.62 93.62.0 01-93.34-93.34V162.67a93.62 93.62.0 0193.34-93.34H349.33m0-37.33H162.67C90.8 32 32 90.8 32 162.67V349.33C32 421.2 90.8 480 162.67 480H349.33C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" fill="#fdb02b"/><path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94.0 01-28 28z" fill="#fdb02b"/><path d="M256 181.33A74.67 74.67.0 11181.33 256 74.75 74.75.0 01256 181.33M256 144A112 112 0 10368 256 112 112 0 00256 144z" fill="#fdb02b"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>Home</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>About</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>Archives</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>Search</span></a></li><li><a href=/links/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg><span>Links</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://blog.rock86.space/ selected>繁體中文</option><option value=https://blog.rock86.space/en/>English</option></select></li><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>夜晚模式</span></li></div></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目錄</h2><div class=widget--toc><nav id=TableOfContents><ol><li><ol><li><a href=#資料夾結構>資料夾結構</a></li><li><a href=#step1-撰寫dockerfile>Step1. 撰寫Dockerfile</a></li><li><a href=#step2-運行docker-commend進行打包image>Step2. 運行Docker commend，進行打包Image</a></li></ol></li><li><a href=#step3-撰寫nginx-conf>Step3. 撰寫Nginx Conf</a></li><li><a href=#step4-申請geolite-資料庫>Step4. 申請GeoLite 資料庫</a></li><li><a href=#step5-撰寫docker-composeyml>Step5. 撰寫Docker-compose.yml</a></li><li><a href=#step6-run-mynginx>Step6. Run mynginx</a></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/p/nginx-geoip2-in-docker/>Nginx GeoIP2 in Docker</a></h2><h3 class=article-subtitle>How to install nginx Geoip2 plugin in docker</h3></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Mar 09, 2023</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>閱讀時間: 3 分鐘</time></div></footer><footer class=article-translations><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><div><a href=https://blog.rock86.space/en/p/nginx-geoip2-in-docker/ class=link>English</a></div></footer></div></header><section class=article-content><h3 id=資料夾結構>資料夾結構</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<span class=emoji>🪨</span></figure><div class=site-meta><h1 class=site-name><a href=/>RockChang's Blog</a></h1><h2 class=site-description>MIS|DevOps|SRE|工具筆記</h2></div></header><ol class=social-menu><li><a href=https://www.facebook.com/zhu.er.3/ target=_blank title=Facebook rel=me><svg style="color:#3882c7" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12H164.11V257.35H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51.0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81.0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291V478.66c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd" fill="#3882c7"/></svg></a></li><li><a href=https://github.com/rock78469 target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://www.instagram.com/r_o_c_k_c/ target=_blank title=Instagram rel=me><svg style="color:#fdb02b" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5_logos</title><path d="M349.33 69.33a93.62 93.62.0 0193.34 93.34V349.33a93.62 93.62.0 01-93.34 93.34H162.67a93.62 93.62.0 01-93.34-93.34V162.67a93.62 93.62.0 0193.34-93.34H349.33m0-37.33H162.67C90.8 32 32 90.8 32 162.67V349.33C32 421.2 90.8 480 162.67 480H349.33C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" fill="#fdb02b"/><path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94.0 01-28 28z" fill="#fdb02b"/><path d="M256 181.33A74.67 74.67.0 11181.33 256 74.75 74.75.0 01256 181.33M256 144A112 112 0 10368 256 112 112 0 00256 144z" fill="#fdb02b"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>Home</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>About</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>Archives</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>Search</span></a></li><li><a href=/links/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg><span>Links</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://blog.rock86.space/ selected>繁體中文</option><option value=https://blog.rock86.space/en/>English</option></select></li><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>夜晚模式</span></li></div></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目錄</h2><div class=widget--toc><nav id=TableOfContents><ol><li><ol><li><a href=#安裝流程>安裝流程</a></li></ol></li><li><a href=#helm-install>Helm Install</a></li><li><a href=#遇到的問題>遇到的問題</a></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/p/nginx-geoip2-in-docker/>Nginx GeoIP2 in Docker</a></h2><h3 class=article-subtitle>How to install nginx Geoip2 plugin in docker</h3></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Mar 09, 2023</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>閱讀時間: 3 分鐘</time></div></footer><footer class=article-translations><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><div><a href=https://blog.rock86.space/en/p/nginx-geoip2-in-docker/ class=link>English</a></div></footer></div></header><section class=article-content><h3 id=安裝流程>安裝流程</h3><h2 id=helm-install>Helm Install</h2><p>Get helm repo</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Jobservice：負責Image複製工作，通於與registry溝通，從一個registry pull鏡像然後push到另一個registry，並記錄job_log
+</span></span></code></pre></td></tr></table></div></div><hr><p>Get helm values.yaml</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>helm show values harbor/harbor &gt;&gt; values.yaml
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#修改value.yaml
+</span></span><span class=line><span class=cl>persistentVolumeClaim:
+</span></span><span class=line><span class=cl>    registry:
+</span></span><span class=line><span class=cl>      # Use the existing PVC which must be created manually before bound,
+</span></span><span class=line><span class=cl>      # and specify the &#34;subPath&#34; if the PVC is shared with other components
+</span></span><span class=line><span class=cl>      existingClaim: &#34;&#34;
+</span></span><span class=line><span class=cl>      # Specify the &#34;storageClass&#34; used to provision the volume. Or the default
+</span></span><span class=line><span class=cl>      # StorageClass will be used(the default).
+</span></span><span class=line><span class=cl>      # Set it to &#34;-&#34; to disable dynamic provisioning
+</span></span><span class=line><span class=cl>      storageClass: &#34;standard&#34;
+</span></span><span class=line><span class=cl>      subPath: &#34;&#34;
+</span></span><span class=line><span class=cl>      accessMode: ReadWriteOnce
+</span></span><span class=line><span class=cl>      size: 5Gi
+</span></span></code></pre></td></tr></table></div></div><hr><p>Create Namespace</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>kubectl create namespace harbor-system
+</span></span></code></pre></td></tr></table></div></div><hr><p>Install harbor via helm</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>helm install harbor -n harbor-system -f values.yaml harbor/harbor
+</span></span></code></pre></td></tr></table></div></div><p>docker login harbor service</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker login harbor.example.com
+</span></span></code></pre></td></tr></table></div></div><p>Push image to harbor</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># tag image
+</span></span><span class=line><span class=cl>docker tag myapi:v1.2.0 harbor.example.com/library/myapi:v1.2.0
+</span></span><span class=line><span class=cl># push to harbor
+</span></span><span class=line><span class=cl>docker push harbor.example.com/library/myapi:v1.2.0
+</span></span></code></pre></td></tr></table></div></div><h2 id=遇到的問題>遇到的問題</h2><p>harbor登入時停用tls by k8s</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>├── GeoLite
-</span></span><span class=line><span class=cl>│   └── GeoLite2-City.mmdb
-</span></span><span class=line><span class=cl>├── config
-</span></span><span class=line><span class=cl>│   └── nginx.conf
-</span></span><span class=line><span class=cl>├── log
-</span></span><span class=line><span class=cl>│    ├── access.log
-</span></span><span class=line><span class=cl>│    └── error.log
-</span></span><span class=line><span class=cl>├── dockerfile
-</span></span><span class=line><span class=cl>└── docker-compose
-</span></span></code></pre></td></tr></table></div></div><h3 id=step1-撰寫dockerfile>Step1. 撰寫Dockerfile</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span><span class=lnt>40
-</span><span class=lnt>41
-</span><span class=lnt>42
-</span><span class=lnt>43
-</span><span class=lnt>44
-</span><span class=lnt>45
-</span><span class=lnt>46
-</span><span class=lnt>47
-</span><span class=lnt>48
-</span><span class=lnt>49
-</span><span class=lnt>50
-</span><span class=lnt>51
-</span><span class=lnt>52
-</span><span class=lnt>53
-</span><span class=lnt>54
-</span><span class=lnt>55
-</span><span class=lnt>56
-</span><span class=lnt>57
-</span><span class=lnt>58
-</span><span class=lnt>59
-</span><span class=lnt>60
-</span><span class=lnt>61
-</span><span class=lnt>62
-</span><span class=lnt>63
-</span><span class=lnt>64
-</span><span class=lnt>65
-</span><span class=lnt>66
-</span><span class=lnt>67
-</span><span class=lnt>68
-</span><span class=lnt>69
-</span><span class=lnt>70
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-v data-lang=v><span class=line><span class=cl><span class=o>#</span> <span class=err>第一階段：編譯</span><span class=nc>GeoIP2</span><span class=err>庫和</span><span class=nc>Nginx</span><span class=err>模塊</span>
-</span></span><span class=line><span class=cl><span class=nc>FROM</span> <span class=nv>debian</span><span class=p>:</span><span class=nv>buster</span><span class=o>-</span><span class=nv>slim</span> <span class=nc>AS</span> <span class=nv>builder</span>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=nc>FROM</span> <span class=nv>debian</span><span class=p>:</span><span class=nv>buster</span><span class=o>-</span><span class=nv>slim</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo vim /etc/crio/crio.config
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>安裝必要的套件和工具</span>
-</span></span><span class=line><span class=cl><span class=nc>RUN</span> <span class=nv>apt</span><span class=o>-</span><span class=nv>get</span> <span class=nv>update</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>apt</span><span class=o>-</span><span class=nv>get</span> <span class=nv>install</span> <span class=o>-</span><span class=nv>y</span> <span class=nv>libmaxminddb</span><span class=o>-</span><span class=nv>dev</span> <span class=nv>wget</span> <span class=nv>build</span><span class=o>-</span><span class=nv>essential</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>rm</span> <span class=o>-</span><span class=nv>rf</span> <span class=o>/</span><span class=nv>var</span><span class=o>/</span><span class=nv>lib</span><span class=o>/</span><span class=nv>apt</span><span class=o>/</span><span class=nv>lists</span><span class=o>/*</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>下載、編譯和安裝</span><span class=nc>GeoIP2</span><span class=err>庫</span>
-</span></span><span class=line><span class=cl><span class=nc>RUN</span> <span class=nv>wget</span> <span class=nv>https</span><span class=p>:</span><span class=c1>//github.com/maxmind/libmaxminddb/releases/download/1.6.0/libmaxminddb-1.6.0.tar.gz &amp;&amp; \
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nv>tar</span> <span class=nv>xvfz</span> <span class=nv>libmaxminddb</span><span class=o>-</span><span class=mf>1.6.0</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=nv>libmaxminddb</span><span class=o>-</span><span class=mf>1.6.0</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=o>/</span><span class=nv>configure</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>make</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>make</span> <span class=nv>install</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>ldconfig</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=o>..</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>rm</span> <span class=o>-</span><span class=nv>rf</span> <span class=nv>libmaxminddb</span><span class=o>-</span><span class=mf>1.6.0</span> <span class=nv>libmaxminddb</span><span class=o>-</span><span class=mf>1.6.0</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>下載、編譯和安裝</span><span class=nv>ngx_http_geoip2_module</span><span class=err>模塊</span>
-</span></span><span class=line><span class=cl><span class=nc>RUN</span> <span class=nv>wget</span> <span class=nv>https</span><span class=p>:</span><span class=c1>//github.com/leev/ngx_http_geoip2_module/archive/master.tar.gz &amp;&amp; \
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nv>tar</span> <span class=nv>xvfz</span> <span class=nv>master</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>rm</span> <span class=o>-</span><span class=nv>rf</span> <span class=nv>master</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>mv</span> <span class=nv>ngx_http_geoip2_module</span><span class=o>-</span><span class=nv>master</span> <span class=o>/</span><span class=nv>usr</span><span class=o>/</span><span class=nv>src</span><span class=o>/</span><span class=nv>nginx</span><span class=o>-</span><span class=nv>geoip2</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>下載、解壓縮和編譯</span><span class=nc>Pcre</span>
-</span></span><span class=line><span class=cl><span class=nc>RUN</span> <span class=nv>wget</span> <span class=nv>http</span><span class=p>:</span><span class=c1>//downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz &amp;&amp; \
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nv>tar</span> <span class=nv>zxvf</span> <span class=nv>pcre</span><span class=o>-</span><span class=mf>8.35</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=nv>pcre</span><span class=o>-</span><span class=mf>8.35</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=o>/</span><span class=nv>configure</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>make</span> <span class=o>&amp;&amp;</span> <span class=nv>make</span> <span class=nv>install</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=o>..</span>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>下載、解壓縮和編譯</span><span class=nc>Zlib</span>
-</span></span><span class=line><span class=cl><span class=nc>RUN</span> <span class=nv>wget</span> <span class=nv>http</span><span class=p>:</span><span class=c1>//zlib.net/zlib-1.2.13.tar.gz &amp;&amp; \
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nv>tar</span> <span class=nv>zxvf</span> <span class=nv>zlib</span><span class=o>-</span><span class=mf>1.2.13</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=nv>zlib</span><span class=o>-</span><span class=mf>1.2.13</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=o>/</span><span class=nv>configure</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>make</span> <span class=o>&amp;&amp;</span> <span class=nv>make</span> <span class=nv>install</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=o>..</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>下載、解壓縮和編譯</span><span class=nc>Nginx</span>
-</span></span><span class=line><span class=cl><span class=nc>RUN</span> <span class=nv>wget</span> <span class=nv>http</span><span class=p>:</span><span class=c1>//nginx.org/download/nginx-1.21.3.tar.gz &amp;&amp; \
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nv>tar</span> <span class=nv>xvfz</span> <span class=nv>nginx</span><span class=o>-</span><span class=mf>1.21.3</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=nv>nginx</span><span class=o>-</span><span class=mf>1.21.3</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=o>/</span><span class=nv>configure</span> <span class=o>--</span><span class=nv>with</span><span class=o>-</span><span class=nv>compat</span> <span class=o>--</span><span class=nv>add</span><span class=o>-</span><span class=nv>dynamic</span><span class=o>-</span><span class=kn>module</span><span class=o>=/</span><span class=nv>usr</span><span class=o>/</span><span class=nv>src</span><span class=o>/</span><span class=nv>nginx</span><span class=o>-</span><span class=nv>geoip2</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>make</span> <span class=nv>modules</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>cd</span> <span class=o>..</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>第二階段：構建最終映像</span>
-</span></span><span class=line><span class=cl><span class=nc>FROM</span> <span class=nv>nginx</span><span class=p>:</span><span class=mf>1.21.3</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>複製第一階段編譯的</span><span class=nv>ngx_http_geoip2_module</span><span class=err>模塊</span>
-</span></span><span class=line><span class=cl><span class=nc>COPY</span> <span class=o>--</span><span class=nv>from</span><span class=o>=</span><span class=nv>builder</span> <span class=o>/</span><span class=nv>nginx</span><span class=o>-</span><span class=mf>1.21.3</span><span class=o>/</span><span class=nv>objs</span><span class=o>/</span><span class=nv>ngx_http_geoip2_module</span><span class=p>.</span><span class=nv>so</span> <span class=o>/</span><span class=nv>etc</span><span class=o>/</span><span class=nv>nginx</span><span class=o>/</span><span class=nv>modules</span><span class=o>/</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>安裝</span><span class=nc>GeoIP2</span><span class=err>庫和相關工具</span>
-</span></span><span class=line><span class=cl><span class=nc>RUN</span> <span class=nv>apt</span><span class=o>-</span><span class=nv>get</span> <span class=nv>update</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>apt</span><span class=o>-</span><span class=nv>get</span> <span class=nv>install</span> <span class=o>-</span><span class=nv>y</span> <span class=nv>libmaxminddb0</span> <span class=nv>mmdb</span><span class=o>-</span><span class=nv>bin</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl>    <span class=nv>rm</span> <span class=o>-</span><span class=nv>rf</span> <span class=o>/</span><span class=nv>var</span><span class=o>/</span><span class=nv>lib</span><span class=o>/</span><span class=nv>apt</span><span class=o>/</span><span class=nv>lists</span><span class=o>/*</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>複製</span><span class=nc>GeoIP2</span><span class=err>庫</span>
-</span></span><span class=line><span class=cl><span class=nc>COPY</span> <span class=o>--</span><span class=nv>from</span><span class=o>=</span><span class=nv>builder</span> <span class=o>/</span><span class=nv>usr</span><span class=o>/</span><span class=nv>local</span><span class=o>/</span><span class=nv>lib</span><span class=o>/</span><span class=nv>libmaxminddb</span><span class=p>.</span><span class=nv>so</span><span class=p>.</span><span class=o>*</span> <span class=o>/</span><span class=nv>usr</span><span class=o>/</span><span class=nv>local</span><span class=o>/</span><span class=nv>lib</span><span class=o>/</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nc>ADD</span> <span class=p>.</span><span class=o>/</span><span class=nc>GeoLite</span><span class=o>/</span><span class=nc>GeoLite2</span><span class=o>-</span><span class=nc>Country_20230221</span><span class=o>/</span><span class=nc>GeoLite2</span><span class=o>-</span><span class=nc>Country</span><span class=p>.</span><span class=nv>mmdb</span> <span class=o>/</span><span class=nv>usr</span><span class=o>/</span><span class=nv>share</span><span class=o>/</span><span class=nc>GeoIP</span><span class=o>/</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=err>配置</span><span class=nc>Nginx</span><span class=err>，啟用</span><span class=nc>GeoIP2</span><span class=err>模塊</span>
-</span></span><span class=line><span class=cl><span class=o>#</span> <span class=nc>RUN</span> <span class=nv>sed</span> <span class=o>-</span><span class=nv>i</span> <span class=s1>&#39;/http {/a \    geoip2 /usr/share/GeoIP/GeoLite2-Country.mmdb  {</span><span class=se>\n</span><span class=s1>        auto_reload 60m;</span><span class=se>\n</span><span class=s1>        </span><span class=o>$</span><span class=nv>geoip2_metadata_country_build</span><span class=s1> metadata build_epoch;</span><span class=se>\n</span><span class=s1>        </span><span class=o>$</span><span class=nv>geoip2_data_country_code</span><span class=s1> country iso_code;</span><span class=se>\n</span><span class=s1>    }&#39;</span> <span class=o>/</span><span class=nv>etc</span><span class=o>/</span><span class=nv>nginx</span><span class=o>/</span><span class=nv>nginx</span><span class=p>.</span><span class=nv>conf</span> <span class=o>&amp;&amp;</span> \
-</span></span><span class=line><span class=cl><span class=o>#</span>     <span class=nv>sed</span> <span class=o>-</span><span class=nv>i</span> <span class=s1>&#39;1 i load_module modules/ngx_http_geoip2_module.so;&#39;</span> <span class=o>/</span><span class=nv>etc</span><span class=o>/</span><span class=nv>nginx</span><span class=o>/</span><span class=nv>nginx</span><span class=p>.</span><span class=nv>conf</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nc>CMD</span> <span class=p>[</span><span class=s2>&#34;nginx&#34;</span><span class=p>,</span> <span class=s2>&#34;-g&#34;</span><span class=p>,</span> <span class=s2>&#34;daemon off;&#34;</span><span class=p>]</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=step2-運行docker-commend進行打包image>Step2. 運行Docker commend，進行打包Image</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker build -t my-nginx .
-</span></span></code></pre></td></tr></table></div></div><p>Create folder</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span><span class=line><span class=cl>insecure_registries = [
+</span></span><span class=line><span class=cl>&#34;harbor.example.com&#34;
+</span></span><span class=line><span class=cl>]
+</span></span></code></pre></td></tr></table></div></div><p>restart service by k8s</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># 放nginx.conf
-</span></span><span class=line><span class=cl>mkdir config
-</span></span><span class=line><span class=cl># 放nginx access.log 和 error.log
-</span></span><span class=line><span class=cl>mkdir log
-</span></span><span class=line><span class=cl># 放IP資料庫
-</span></span><span class=line><span class=cl>mkdir GeoLite
-</span></span></code></pre></td></tr></table></div></div><h2 id=step3-撰寫nginx-conf>Step3. 撰寫Nginx Conf</h2><p>log格式改為json格式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span><span class=lnt>40
-</span><span class=lnt>41
-</span><span class=lnt>42
-</span><span class=lnt>43
-</span><span class=lnt>44
-</span><span class=lnt>45
-</span><span class=lnt>46
-</span><span class=lnt>47
-</span><span class=lnt>48
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-v data-lang=v><span class=line><span class=cl><span class=nv>load_module</span> <span class=nv>modules</span><span class=o>/</span><span class=nv>ngx_http_geoip2_module</span><span class=p>.</span><span class=nv>so</span><span class=p>;</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>systemctl daemon-reload
+</span></span><span class=line><span class=cl>systemctl restart crio
+</span></span><span class=line><span class=cl>systemctl status crio.service
+</span></span></code></pre></td></tr></table></div></div><hr><p>harbor登入時停用tls by docker</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo vim /etc/docker/daemon.json
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nv>user</span>  <span class=nv>nginx</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=nv>worker_processes</span>  <span class=nv>auto</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nv>error_log</span>  <span class=o>/</span><span class=nv>var</span><span class=o>/</span><span class=nv>log</span><span class=o>/</span><span class=nv>nginx</span><span class=o>/</span><span class=kt>error</span><span class=p>.</span><span class=nv>log</span> <span class=nv>notice</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=nv>pid</span>        <span class=o>/</span><span class=nv>var</span><span class=o>/</span><span class=nv>run</span><span class=o>/</span><span class=nv>nginx</span><span class=p>.</span><span class=nv>pid</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nv>events</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=nv>worker_connections</span>  <span class=mi>1024</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nv>http</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=nv>geoip2</span> <span class=o>/</span><span class=nv>usr</span><span class=o>/</span><span class=nv>share</span><span class=o>/</span><span class=nc>GeoIP</span><span class=o>/</span><span class=nc>GeoLite2</span><span class=o>-</span><span class=nc>Country</span><span class=p>.</span><span class=nv>mmdb</span>  <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=nv>auto_reload</span> <span class=mi>60</span><span class=nv>m</span><span class=p>;</span> <span class=o>#</span> <span class=err>自動重新載入時間間隔</span>
-</span></span><span class=line><span class=cl>        <span class=o>$</span><span class=nv>geoip2_data_city_name</span> <span class=nv>city</span> <span class=nv>names</span> <span class=nv>en</span><span class=p>;</span> <span class=o>#</span> <span class=err>市名</span>
-</span></span><span class=line><span class=cl>        <span class=o>$</span><span class=nv>geoip2_data_city_latitude</span> <span class=nv>location</span> <span class=nv>latitude</span><span class=p>;</span> <span class=o>#</span> <span class=err>緯度</span>
-</span></span><span class=line><span class=cl>        <span class=o>$</span><span class=nv>geoip2_data_city_longitude</span> <span class=nv>location</span> <span class=nv>longitude</span><span class=p>;</span> <span class=o>#</span> <span class=err>經度</span>
-</span></span><span class=line><span class=cl>        <span class=o>$</span><span class=nv>geoip2_data_country_iso_code</span> <span class=nv>country</span> <span class=nv>iso_code</span><span class=p>;</span> <span class=o>#</span> <span class=err>國家</span><span class=nc>ISO</span><span class=err>代碼</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=nv>include</span>       <span class=o>/</span><span class=nv>etc</span><span class=o>/</span><span class=nv>nginx</span><span class=o>/</span><span class=nv>mime</span><span class=p>.</span><span class=nv>types</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>default_type</span>  <span class=nv>application</span><span class=o>/</span><span class=nv>octet</span><span class=o>-</span><span class=nv>stream</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=o>#</span> <span class=nv>log_format</span>  <span class=nv>main</span>  <span class=s1>&#39;</span><span class=o>$</span><span class=nv>remote_addr</span><span class=s1> - </span><span class=o>$</span><span class=nv>remote_user</span><span class=s1> [</span><span class=o>$</span><span class=nv>time_local</span><span class=s1>] &#34;</span><span class=o>$</span><span class=nv>request</span><span class=s1>&#34; &#39;</span>
-</span></span><span class=line><span class=cl>    <span class=o>#</span>                   <span class=s1>&#39;</span><span class=o>$</span><span class=nv>status</span><span class=s1> </span><span class=o>$</span><span class=nv>body_bytes_sent</span><span class=s1> &#34;</span><span class=o>$</span><span class=nv>http_referer</span><span class=s1>&#34; &#39;</span>
-</span></span><span class=line><span class=cl>    <span class=o>#</span>                   <span class=s1>&#39;&#34;</span><span class=o>$</span><span class=nv>http_user_agent</span><span class=s1>&#34; &#34;</span><span class=o>$</span><span class=nv>http_x_forwarded_for</span><span class=s1>&#34;&#39;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=o>#</span> <span class=nv>log_format</span> <span class=nv>custom</span> <span class=s1>&#39;</span><span class=o>$</span><span class=nv>remote_addr</span><span class=s1> - </span><span class=o>$</span><span class=nv>remote_user</span><span class=s1> [</span><span class=o>$</span><span class=nv>time_local</span><span class=s1>]&#39;</span>
-</span></span><span class=line><span class=cl>    <span class=o>#</span>                   <span class=s1>&#39;&#34;</span><span class=o>$</span><span class=nv>request</span><span class=s1>&#34; </span><span class=o>$</span><span class=nv>status</span><span class=s1> </span><span class=o>$</span><span class=nv>body_bytes_sent</span><span class=s1>&#39;</span>
-</span></span><span class=line><span class=cl>    <span class=o>#</span>                   <span class=s1>&#39;&#34;</span><span class=o>$</span><span class=nv>http_referer</span><span class=s1>&#34; </span><span class=o>$</span><span class=nv>host</span><span class=s1> &#34;</span><span class=o>$</span><span class=nv>http_user_agent</span><span class=s1>&#34;&#39;</span>
-</span></span><span class=line><span class=cl>    <span class=o>#</span>                   <span class=s1>&#39;&#34;</span><span class=o>$</span><span class=nv>request_time</span><span class=s1>&#34; &#34;</span><span class=o>$</span><span class=nv>upstream_connect_time</span><span class=s1>&#34;&#39;</span>
-</span></span><span class=line><span class=cl>    <span class=o>#</span>                   <span class=s1>&#39;&#34;</span><span class=o>$</span><span class=nv>geoip2_data_city_name</span><span class=s1>&#34; &#34;</span><span class=o>$</span><span class=nv>geoip2_data_country_iso_code</span><span class=s1>&#34;&#39;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>log_format</span> <span class=nv>main2</span> <span class=s1>&#39;{&#34;remote_addr&#34;:&#34;</span><span class=o>$</span><span class=nv>remote_addr</span><span class=s1>&#34;,&#34;remote_user&#34;:&#34;</span><span class=o>$</span><span class=nv>remote_user</span><span class=s1>&#34;,&#34;time&#34;:&#34;</span><span class=o>$</span><span class=nv>time_local</span><span class=s1>&#34;,&#34;request&#34;:&#34;</span><span class=o>$</span><span class=nv>request</span><span class=s1>&#34;,&#34;status&#34;:&#34;</span><span class=o>$</span><span class=nv>status</span><span class=s1>&#34;,&#34;body_bytes_sent&#34;:&#34;</span><span class=o>$</span><span class=nv>body_bytes_sent</span><span class=s1>&#34;,&#34;http_referer&#34;:&#34;</span><span class=o>$</span><span class=nv>http_referer</span><span class=s1>&#34;,&#34;host&#34;:&#34;</span><span class=o>$</span><span class=nv>host</span><span class=s1>&#34;,&#34;http_user_agent&#34;:&#34;</span><span class=o>$</span><span class=nv>http_user_agent</span><span class=s1>&#34;,&#34;request_time&#34;:&#34;</span><span class=o>$</span><span class=nv>request_time</span><span class=s1>&#34;,&#34;upstream_connect_time&#34;:&#34;</span><span class=o>$</span><span class=nv>upstream_connect_time</span><span class=s1>&#34;,&#34;geoip2_data_city_name&#34;:&#34;</span><span class=o>$</span><span class=nv>geoip2_data_city_name</span><span class=s1>&#34;,&#34;geoip2_data_country_iso_code&#34;:&#34;</span><span class=o>$</span><span class=nv>geoip2_data_country_iso_code</span><span class=s1>&#34;,&#34;geoip2_data_city_latitude&#34;:&#34;</span><span class=o>$</span><span class=nv>geoip2_data_city_latitude</span><span class=s1>&#34;,&#34;geoip2_data_city_longitude&#34;:&#34;</span><span class=o>$</span><span class=nv>geoip2_data_city_longitude</span><span class=s1>&#34;}&#39;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>access_log</span>  <span class=o>/</span><span class=nv>var</span><span class=o>/</span><span class=nv>log</span><span class=o>/</span><span class=nv>nginx</span><span class=o>/</span><span class=nv>access</span><span class=p>.</span><span class=nv>log</span>  <span class=nv>main2</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>sendfile</span>        <span class=nv>on</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=cp>#tcp_nopush     on;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>keepalive_timeout</span>  <span class=mi>65</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=cp>#gzip  on;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>include</span> <span class=o>/</span><span class=nv>etc</span><span class=o>/</span><span class=nv>nginx</span><span class=o>/</span><span class=nv>conf</span><span class=p>.</span><span class=nv>d</span><span class=o>/*</span><span class=p>.</span><span class=nv>conf</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=step4-申請geolite-資料庫>Step4. 申請GeoLite 資料庫</h2><p><a class=link href="https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en" target=_blank rel=noopener>註冊連結</a></p><ol><li>點選註冊GeoIP2</li><li>輸入個人資料後點選 Continue，註冊完成</li><li>點選下載 <a class=link href=https://www.maxmind.com/en/accounts/current/geoip/downloads target=_blank rel=noopener>下載頁面</a></li><li>下載GeoLite2 City</li><li>將解壓縮後的 GeoLite2-City.mmdb 放到GeoLite資料夾</li></ol><h2 id=step5-撰寫docker-composeyml>Step5. 撰寫Docker-compose.yml</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>version: &#39;3.5&#39;
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>services:
-</span></span><span class=line><span class=cl>  nginx:
-</span></span><span class=line><span class=cl>    image: mynginx:latest
-</span></span><span class=line><span class=cl>    container_name: mynginx
-</span></span><span class=line><span class=cl>    ports:
-</span></span><span class=line><span class=cl>      - 8081:80
-</span></span><span class=line><span class=cl>    volumes:
-</span></span><span class=line><span class=cl>      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
-</span></span><span class=line><span class=cl>      - ./nginx/log:/var/log/nginx
-</span></span><span class=line><span class=cl>      - ./GeoLite/GeoLite2-City.mmdb:/usr/share/GeoIP
-</span></span><span class=line><span class=cl>    networks:
-</span></span><span class=line><span class=cl>      - nginx_network
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>networks:
-</span></span><span class=line><span class=cl>  nginx_network
-</span></span><span class=line><span class=cl>    name: nginx_network
-</span></span><span class=line><span class=cl>    driver: bridge
-</span></span></code></pre></td></tr></table></div></div><h2 id=step6-run-mynginx>Step6. Run mynginx</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker-compose up -d
-</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-tags><a href=/tags/nginx/>nginx</a>
-<a href=/tags/geoip/>geoip</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><div class=disqus-container><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style><script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script><footer class=site-footer><section class=copyright>&copy;
+</span></span><span class=line><span class=cl>&#34;insecure-registries&#34; : [&#34;harbor.example.com&#34;]
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-tags><a href=/tags/harbor/>harbor</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><div class=disqus-container><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style><script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script><footer class=site-footer><section class=copyright>&copy;
 2020 -
-2023 RockChang's Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.16.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+2023 RockChang's Blog</section><section class=powerby><br></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
