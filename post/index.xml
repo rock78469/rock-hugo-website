@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on RockChang's Blog</title><link>https://blog.rock86.space/post/</link><description>Recent content in Posts on RockChang's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.rock86.space/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Harbor 安裝筆記</title><link>https://blog.rock86.space/p/harbor-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/</link><pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/harbor-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/</guid><description>&lt;h3 id="安裝流程">安裝流程&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on RockChang's Blog</title><link>https://blog.myrockspace86.net/post/</link><description>Recent content in Posts on RockChang's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.myrockspace86.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Harbor 安裝筆記</title><link>https://blog.myrockspace86.net/p/harbor-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/</link><pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/harbor-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/</guid><description>&lt;h3 id="安裝流程">安裝流程&lt;/h3>
 &lt;h2 id="helm-install">Helm Install&lt;/h2>
 &lt;p>Get helm repo&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -117,9 +117,9 @@
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">systemctl daemon-reload
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl restart crio
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl status crio.service
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">systemctl&lt;/span> &lt;span class="n">daemon&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">reload&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">systemctl&lt;/span> &lt;span class="n">restart&lt;/span> &lt;span class="n">crio&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">systemctl&lt;/span> &lt;span class="n">status&lt;/span> &lt;span class="n">crio&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">service&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;hr>
@@ -136,7 +136,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;insecure-registries&amp;#34; : [&amp;#34;harbor.example.com&amp;#34;]
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>git cz安裝及設定</title><link>https://blog.rock86.space/p/git-cz%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A/</link><pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/git-cz%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A/</guid><description>&lt;h1 id="使用git-cz-原因">使用git cz 原因&lt;/h1>
+&lt;/div></description></item><item><title>git cz安裝及設定</title><link>https://blog.myrockspace86.net/p/git-cz%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A/</link><pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/git-cz%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A/</guid><description>&lt;h1 id="使用git-cz-原因">使用git cz 原因&lt;/h1>
 &lt;p>使用git cz 能夠固定 git commit 格式，多人協作時，更能方便的去辨識git commit 的內容&lt;/p>
 &lt;h1 id="安裝-git-cz">安裝 git cz&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -207,60 +207,60 @@
 &lt;/span>&lt;span class="lnt">54
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">module.exports = {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> disableEmoji: false,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> format: &amp;#39;{type}{scope}: {emoji}{subject}&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> list: [&amp;#39;wip&amp;#39;, &amp;#39;test&amp;#39;, &amp;#39;feat&amp;#39;, &amp;#39;fix&amp;#39;, &amp;#39;docs&amp;#39;, &amp;#39;refactor&amp;#39;, &amp;#39;style&amp;#39;],
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> maxMessageLength: 64,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> minMessageLength: 3,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> questions: [&amp;#39;type&amp;#39;, &amp;#39;scope&amp;#39;, &amp;#39;subject&amp;#39;, &amp;#39;body&amp;#39;, &amp;#39;breaking&amp;#39;, &amp;#39;issues&amp;#39;],
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> scopes: [],
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> types: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> wip: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> description: &amp;#39;temp&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> emoji: &amp;#39;🚧&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> value: &amp;#39;wip&amp;#39;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> description: &amp;#39;New / Update Feature&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> emoji: &amp;#39;💎&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> value: &amp;#39;feat&amp;#39;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> fix: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> description: &amp;#39;A bug fix&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> emoji: &amp;#39;🐛&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> value: &amp;#39;fix&amp;#39;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> refactor: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> description: &amp;#39;A code change that neither fixes a bug or adds a feature&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> emoji: &amp;#39;💡&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> value: &amp;#39;refactor&amp;#39;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> docs: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> description: &amp;#39;Documentation only change&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> emoji: &amp;#39;✏️ &amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> value: &amp;#39;docs&amp;#39;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> test: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> description: &amp;#39;Adding missing tests&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> emoji: &amp;#39;🛠️ &amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> value: &amp;#39;test&amp;#39;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> style: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> description: &amp;#39;Markup, white-space, formatting, missing semi-colons...&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> emoji: &amp;#39;💄&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> value: &amp;#39;style&amp;#39;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> messages: {
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> type: &amp;#39;請選擇您要 Commit 的類型(必選)：&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> subject: &amp;#39;簡短描述 Commit 的修正範圍(必填)：\n&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> body: &amp;#39;更詳細的 Commit 說明(可選，若無，請按 Enter 略過):\n &amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> breaking: &amp;#39;列出所有重大更改(可選，若無，請按 Enter 略過):\n&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> footer: &amp;#39;此次 Commit 會關閉的 Issues, e.g #123(可選，若無，請按 Enter 略過):&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> confirmCommit: &amp;#39;請確認本次 Commit 描述。\n&amp;#39;,
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">};
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">module&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">disableEmoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="bp">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">format&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;{type}{scope}: {emoji}{subject}&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">list&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;wip&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;test&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;feat&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;fix&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;docs&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;refactor&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;style&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">maxMessageLength&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">64&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">minMessageLength&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">questions&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;type&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;scope&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;subject&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;body&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;breaking&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;issues&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">scopes&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">types&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">wip&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;temp&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;🚧&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;wip&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">feat&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;New / Update Feature&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;💎&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;feat&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">fix&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;A bug fix&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;🐛&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;fix&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">refactor&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;A code change that neither fixes a bug or adds a feature&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;💡&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;refactor&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">docs&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Documentation only change&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;✏️ &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;docs&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">test&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Adding missing tests&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;🛠️ &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;test&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">style&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Markup, white-space, formatting, missing semi-colons...&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emoji&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;💄&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;style&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">messages&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">type&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;請選擇您要 Commit 的類型(必選)：&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">subject&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;簡短描述 Commit 的修正範圍(必填)：&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">body&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;更詳細的 Commit 說明(可選，若無，請按 Enter 略過):&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> &amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">breaking&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;列出所有重大更改(可選，若無，請按 Enter 略過):&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">footer&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;此次 Commit 會關閉的 Issues, e.g #123(可選，若無，請按 Enter 略過):&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">confirmCommit&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;請確認本次 Commit 描述。&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="執行指令">執行指令&lt;/h1>
@@ -274,7 +274,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git cz
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>多個github帳號同時使用ssh去clone repo</title><link>https://blog.rock86.space/p/%E5%A4%9A%E5%80%8Bgithub%E5%B8%B3%E8%99%9F%E5%90%8C%E6%99%82%E4%BD%BF%E7%94%A8ssh%E5%8E%BBclone-repo/</link><pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/%E5%A4%9A%E5%80%8Bgithub%E5%B8%B3%E8%99%9F%E5%90%8C%E6%99%82%E4%BD%BF%E7%94%A8ssh%E5%8E%BBclone-repo/</guid><description>&lt;h1 id="多個github帳號同時使用ssh去clone-repo">多個github帳號同時使用ssh去clone repo&lt;/h1>
+&lt;/div></description></item><item><title>多個github帳號同時使用ssh去clone repo</title><link>https://blog.myrockspace86.net/p/%E5%A4%9A%E5%80%8Bgithub%E5%B8%B3%E8%99%9F%E5%90%8C%E6%99%82%E4%BD%BF%E7%94%A8ssh%E5%8E%BBclone-repo/</link><pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/%E5%A4%9A%E5%80%8Bgithub%E5%B8%B3%E8%99%9F%E5%90%8C%E6%99%82%E4%BD%BF%E7%94%A8ssh%E5%8E%BBclone-repo/</guid><description>&lt;h1 id="多個github帳號同時使用ssh去clone-repo">多個github帳號同時使用ssh去clone repo&lt;/h1>
 &lt;p>問題描述：
 一台PC
 兩個github帳號
@@ -354,7 +354,7 @@
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;/ol>
-&lt;p>這樣就可以用同一台電腦，不同的github 帳號去拉取repo了！&lt;/p></description></item><item><title>Mongodb User 操作筆記</title><link>https://blog.rock86.space/p/mongodb-user-%E6%93%8D%E4%BD%9C%E7%AD%86%E8%A8%98/</link><pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/mongodb-user-%E6%93%8D%E4%BD%9C%E7%AD%86%E8%A8%98/</guid><description>&lt;h1 id="mongodb-user-操作筆記">Mongodb User 操作筆記&lt;/h1>
+&lt;p>這樣就可以用同一台電腦，不同的github 帳號去拉取repo了！&lt;/p></description></item><item><title>Mongodb User 操作筆記</title><link>https://blog.myrockspace86.net/p/mongodb-user-%E6%93%8D%E4%BD%9C%E7%AD%86%E8%A8%98/</link><pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/mongodb-user-%E6%93%8D%E4%BD%9C%E7%AD%86%E8%A8%98/</guid><description>&lt;h1 id="mongodb-user-操作筆記">Mongodb User 操作筆記&lt;/h1>
 &lt;p>Property: March 17, 2023 5:30 PM
 Tags: Database, Mongodb&lt;/p>
 &lt;p>在Mongodb的架構內，是將使用者(&lt;strong>User&lt;/strong>)與角色(&lt;strong>Role&lt;/strong>)分開的，
@@ -773,7 +773,7 @@ Tags: Database, Mongodb&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Open Docker Remote API on Mac</title><link>https://blog.rock86.space/p/open-docker-remote-api-on-mac/</link><pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/open-docker-remote-api-on-mac/</guid><description>&lt;h2 id="說明">說明&lt;/h2>
+&lt;/ol></description></item><item><title>Open Docker Remote API on Mac</title><link>https://blog.myrockspace86.net/p/open-docker-remote-api-on-mac/</link><pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/open-docker-remote-api-on-mac/</guid><description>&lt;h2 id="說明">說明&lt;/h2>
 &lt;p>因為在MacOS上安裝的Docker Desktop 無法使用Docker Remote API&lt;/p>
 &lt;p>因此可以使用 socate image 去開啟這項服務&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -783,9 +783,9 @@ Tags: Database, Mongodb&lt;/p>
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker run -d --name socat --restart always \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -p 2375:2375 \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -v /var/run/docker.sock:/var/run/docker.sock alpine/socat tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">docker&lt;/span> &lt;span class="n">run&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">d&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="n">socat&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">restart&lt;/span> &lt;span class="n">always&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">-&lt;/span>&lt;span class="n">p&lt;/span> &lt;span class="mi">2375&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2375&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">-&lt;/span>&lt;span class="n">v&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">docker&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sock&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">docker&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sock&lt;/span> &lt;span class="n">alpine&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">socat&lt;/span> &lt;span class="n">tcp&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">listen&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2375&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">fork&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">reuseaddr&lt;/span> &lt;span class="n">unix&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">connect&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">docker&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sock&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="修改環境變數">修改環境變數&lt;/h3>
@@ -796,9 +796,9 @@ Tags: Database, Mongodb&lt;/p>
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">$vim ~/.bash_profile
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">export DOCKER_HOST=tcp://localhost:2375
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$source .bash_profile
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="o">$&lt;/span>&lt;span class="n">vim&lt;/span> &lt;span class="o">~/.&lt;/span>&lt;span class="n">bash_profile&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">DOCKER_HOST&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">tcp&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">localhost&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">2375&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">$&lt;/span>&lt;span class="n">source&lt;/span> &lt;span class="o">.&lt;/span>&lt;span class="n">bash_profile&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="確認運行狀況">確認運行狀況&lt;/h3>
@@ -810,7 +810,7 @@ Tags: Database, Mongodb&lt;/p>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">curl localhost:2375/version
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>ImageProxy使用範例筆記</title><link>https://blog.rock86.space/p/imageproxy%E4%BD%BF%E7%94%A8%E7%AF%84%E4%BE%8B%E7%AD%86%E8%A8%98/</link><pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/imageproxy%E4%BD%BF%E7%94%A8%E7%AF%84%E4%BE%8B%E7%AD%86%E8%A8%98/</guid><description>&lt;h2 id="介紹">介紹&lt;/h2>
+&lt;/div></description></item><item><title>ImageProxy使用範例筆記</title><link>https://blog.myrockspace86.net/p/imageproxy%E4%BD%BF%E7%94%A8%E7%AF%84%E4%BE%8B%E7%AD%86%E8%A8%98/</link><pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/imageproxy%E4%BD%BF%E7%94%A8%E7%AF%84%E4%BE%8B%E7%AD%86%E8%A8%98/</guid><description>&lt;h2 id="介紹">介紹&lt;/h2>
 &lt;p>這是一個快取圖片的服務，可以建立在自己的server上，可以做成一個自建的image cdn服務。&lt;/p>
 &lt;p>同時還可以直接調整圖片的大小、裁切圖片、旋轉圖片、比例裁剪圖片，相當方便。&lt;/p>
 &lt;h2 id="github-repostitory">Github Repostitory&lt;/h2>
@@ -1022,7 +1022,7 @@ Tags: Database, Mongodb&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://localhost:8080/500/https://octodex.github.com/images/codercat.jpg
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Nginx GeoIP2 in Docker</title><link>https://blog.rock86.space/p/nginx-geoip2-in-docker/</link><pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/nginx-geoip2-in-docker/</guid><description>&lt;h3 id="資料夾結構">資料夾結構&lt;/h3>
+&lt;/div></description></item><item><title>Nginx GeoIP2 in Docker</title><link>https://blog.myrockspace86.net/p/nginx-geoip2-in-docker/</link><pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/nginx-geoip2-in-docker/</guid><description>&lt;h3 id="資料夾結構">資料夾結構&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -1122,76 +1122,76 @@ Tags: Database, Mongodb&lt;/p>
 &lt;/span>&lt;span class="lnt">70
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-v" data-lang="v">&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">第一階段：編譯&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫和&lt;/span>&lt;span class="nc">Nginx&lt;/span>&lt;span class="err">模塊&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">FROM&lt;/span> &lt;span class="nv">debian&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">buster&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">slim&lt;/span> &lt;span class="nc">AS&lt;/span> &lt;span class="nv">builder&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="nc">FROM&lt;/span> &lt;span class="nv">debian&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nv">buster&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">slim&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 第一階段：編譯GeoIP2庫和Nginx模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">FROM&lt;/span> &lt;span class="n">debian&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">buster&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">slim&lt;/span> &lt;span class="n">AS&lt;/span> &lt;span class="n">builder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># FROM debian:buster-slim&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">安裝必要的套件和工具&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">update&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">y&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">dev&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">build&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">essential&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">apt&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lists&lt;/span>&lt;span class="o">/*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 安裝必要的套件和工具&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RUN&lt;/span> &lt;span class="n">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">get&lt;/span> &lt;span class="n">update&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">get&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">y&lt;/span> &lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">dev&lt;/span> &lt;span class="n">wget&lt;/span> &lt;span class="n">build&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">essential&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">rf&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">apt&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lists&lt;/span>&lt;span class="o">/*&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、編譯和安裝&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//github.com/maxmind/libmaxminddb/releases/download/1.6.0/libmaxminddb-1.6.0.tar.gz &amp;amp;&amp;amp; \
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">xvfz&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">ldconfig&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span> &lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6.0&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 下載、編譯和安裝GeoIP2庫&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RUN&lt;/span> &lt;span class="n">wget&lt;/span> &lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">github&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">maxmind&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">releases&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">download&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">1.6&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">0.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tar&lt;/span> &lt;span class="n">xvfz&lt;/span> &lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">0.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">./&lt;/span>&lt;span class="n">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">make&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ldconfig&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="o">..&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">rf&lt;/span> &lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">0&lt;/span> &lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.6&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">0.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、編譯和安裝&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="err">模塊&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//github.com/leev/ngx_http_geoip2_module/archive/master.tar.gz &amp;amp;&amp;amp; \
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">xvfz&lt;/span> &lt;span class="nv">master&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="nv">master&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">mv&lt;/span> &lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">master&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">geoip2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 下載、編譯和安裝ngx_http_geoip2_module模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RUN&lt;/span> &lt;span class="n">wget&lt;/span> &lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">github&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">leev&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">ngx_http_geoip2_module&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">archive&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">master&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tar&lt;/span> &lt;span class="n">xvfz&lt;/span> &lt;span class="n">master&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">rf&lt;/span> &lt;span class="n">master&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">mv&lt;/span> &lt;span class="n">ngx_http_geoip2_module&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">master&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">geoip2&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、解壓縮和編譯&lt;/span>&lt;span class="nc">Pcre&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz &amp;amp;&amp;amp; \
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">zxvf&lt;/span> &lt;span class="nv">pcre&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">8.35&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">pcre&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">8.35&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nv">make&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、解壓縮和編譯&lt;/span>&lt;span class="nc">Zlib&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//zlib.net/zlib-1.2.13.tar.gz &amp;amp;&amp;amp; \
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">zxvf&lt;/span> &lt;span class="nv">zlib&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.2.13&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">zlib&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.2.13&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nv">make&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 下載、解壓縮和編譯Pcre&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RUN&lt;/span> &lt;span class="n">wget&lt;/span> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">downloads&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sourceforge&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">net&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">project&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">pcre&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">pcre&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mf">8.35&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">pcre&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">8.35&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tar&lt;/span> &lt;span class="n">zxvf&lt;/span> &lt;span class="n">pcre&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">8.35&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="n">pcre&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">8.35&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">./&lt;/span>&lt;span class="n">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">make&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="o">..&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 下載、解壓縮和編譯Zlib&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RUN&lt;/span> &lt;span class="n">wget&lt;/span> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">zlib&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">net&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">zlib&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.2&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">13.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tar&lt;/span> &lt;span class="n">zxvf&lt;/span> &lt;span class="n">zlib&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.2&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">13.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="n">zlib&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.2&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">13&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">./&lt;/span>&lt;span class="n">configure&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">make&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">make&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="o">..&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">下載、解壓縮和編譯&lt;/span>&lt;span class="nc">Nginx&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">wget&lt;/span> &lt;span class="nv">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//nginx.org/download/nginx-1.21.3.tar.gz &amp;amp;&amp;amp; \
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">tar&lt;/span> &lt;span class="nv">xvfz&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21.3&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">tar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21.3&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">configure&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">with&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">compat&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">add&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">dynamic&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="kn">module&lt;/span>&lt;span class="o">=/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">geoip2&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">make&lt;/span> &lt;span class="nv">modules&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">cd&lt;/span> &lt;span class="o">..&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 下載、解壓縮和編譯Nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RUN&lt;/span> &lt;span class="n">wget&lt;/span> &lt;span class="n">http&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">download&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">3.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tar&lt;/span> &lt;span class="n">xvfz&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mf">3.&lt;/span>&lt;span class="n">tar&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gz&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">3&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">./&lt;/span>&lt;span class="n">configure&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">with&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">compat&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">add&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">dynamic&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">module&lt;/span>&lt;span class="o">=/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">geoip2&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">make&lt;/span> &lt;span class="n">modules&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cd&lt;/span> &lt;span class="o">..&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">第二階段：構建最終映像&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">FROM&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mf">1.21.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 第二階段：構建最終映像&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">FROM&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mf">1.21&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">3&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">複製第一階段編譯的&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="err">模塊&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">COPY&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">from&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">builder&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21.3&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">objs&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">so&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">modules&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 複製第一階段編譯的ngx_http_geoip2_module模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">COPY&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">from&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">builder&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.21&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">objs&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">ngx_http_geoip2_module&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">so&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">modules&lt;/span>&lt;span class="o">/&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">安裝&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫和相關工具&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">RUN&lt;/span> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">update&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">get&lt;/span> &lt;span class="nv">install&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">y&lt;/span> &lt;span class="nv">libmaxminddb0&lt;/span> &lt;span class="nv">mmdb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">bin&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">rf&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">apt&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lists&lt;/span>&lt;span class="o">/*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 安裝GeoIP2庫和相關工具&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RUN&lt;/span> &lt;span class="n">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">get&lt;/span> &lt;span class="n">update&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">apt&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">get&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">y&lt;/span> &lt;span class="n">libmaxminddb0&lt;/span> &lt;span class="n">mmdb&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">bin&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">rm&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">rf&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">apt&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lists&lt;/span>&lt;span class="o">/*&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">複製&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">庫&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">COPY&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="nv">from&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">builder&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">local&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">libmaxminddb&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">so&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">local&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">lib&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 複製GeoIP2庫&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">COPY&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">from&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">builder&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">local&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lib&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">libmaxminddb&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">so&lt;/span>&lt;span class="o">.*&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">local&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lib&lt;/span>&lt;span class="o">/&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">ADD&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nc">Country_20230221&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nc">Country&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">mmdb&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">share&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoIP&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ADD&lt;/span> &lt;span class="o">./&lt;/span>&lt;span class="n">GeoLite&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Country_20230221&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Country&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mmdb&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">share&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">GeoIP&lt;/span>&lt;span class="o">/&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="err">配置&lt;/span>&lt;span class="nc">Nginx&lt;/span>&lt;span class="err">，啟用&lt;/span>&lt;span class="nc">GeoIP2&lt;/span>&lt;span class="err">模塊&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="nc">RUN&lt;/span> &lt;span class="nv">sed&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">i&lt;/span> &lt;span class="s1">&amp;#39;/http {/a \ geoip2 /usr/share/GeoIP/GeoLite2-Country.mmdb {&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> auto_reload 60m;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_metadata_country_build&lt;/span>&lt;span class="s1"> metadata build_epoch;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_code&lt;/span>&lt;span class="s1"> country iso_code;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1"> }&amp;#39;&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">conf&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> \
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">#&lt;/span> &lt;span class="nv">sed&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="nv">i&lt;/span> &lt;span class="s1">&amp;#39;1 i load_module modules/ngx_http_geoip2_module.so;&amp;#39;&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 配置Nginx，啟用GeoIP2模塊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># RUN sed -i &amp;#39;/http {/a \ geoip2 /usr/share/GeoIP/GeoLite2-Country.mmdb {\n auto_reload 60m;\n $geoip2_metadata_country_build metadata build_epoch;\n $geoip2_data_country_code country iso_code;\n }&amp;#39; /etc/nginx/nginx.conf &amp;amp;&amp;amp; \&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># sed -i &amp;#39;1 i load_module modules/ngx_http_geoip2_module.so;&amp;#39; /etc/nginx/nginx.conf&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nc">CMD&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;nginx&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;-g&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;daemon off;&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">CMD&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;nginx&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;-g&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;daemon off;&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="step2-運行docker-commend進行打包image">Step2. 運行Docker commend，進行打包Image&lt;/h3>
@@ -1276,52 +1276,52 @@ Tags: Database, Mongodb&lt;/p>
 &lt;/span>&lt;span class="lnt">48
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-v" data-lang="v">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">load_module&lt;/span> &lt;span class="nv">modules&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">ngx_http_geoip2_module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">so&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">load_module&lt;/span> &lt;span class="n">modules&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">ngx_http_geoip2_module&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">so&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">user&lt;/span> &lt;span class="nv">nginx&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">worker_processes&lt;/span> &lt;span class="nv">auto&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">user&lt;/span> &lt;span class="n">nginx&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">worker_processes&lt;/span> &lt;span class="n">auto&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">error_log&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">log&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="kt">error&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">log&lt;/span> &lt;span class="nv">notice&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">pid&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">run&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">pid&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">error_log&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nb">log&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">error&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">log&lt;/span> &lt;span class="n">notice&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">pid&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">pid&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">events&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">worker_connections&lt;/span> &lt;span class="mi">1024&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">events&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">worker_connections&lt;/span> &lt;span class="mi">1024&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">http&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">geoip2&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">share&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoIP&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nc">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nc">Country&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">mmdb&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">auto_reload&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="nv">m&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">自動重新載入時間間隔&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_name&lt;/span> &lt;span class="nv">city&lt;/span> &lt;span class="nv">names&lt;/span> &lt;span class="nv">en&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">市名&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_latitude&lt;/span> &lt;span class="nv">location&lt;/span> &lt;span class="nv">latitude&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">緯度&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_longitude&lt;/span> &lt;span class="nv">location&lt;/span> &lt;span class="nv">longitude&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">經度&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_iso_code&lt;/span> &lt;span class="nv">country&lt;/span> &lt;span class="nv">iso_code&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">#&lt;/span> &lt;span class="err">國家&lt;/span>&lt;span class="nc">ISO&lt;/span>&lt;span class="err">代碼&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">http&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">geoip2&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">share&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">GeoIP&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">Country&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mmdb&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">auto_reload&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="n">m&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1"># 自動重新載入時間間隔&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="n">geoip2_data_city_name&lt;/span> &lt;span class="n">city&lt;/span> &lt;span class="n">names&lt;/span> &lt;span class="n">en&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1"># 市名&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="n">geoip2_data_city_latitude&lt;/span> &lt;span class="n">location&lt;/span> &lt;span class="n">latitude&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1"># 緯度&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="n">geoip2_data_city_longitude&lt;/span> &lt;span class="n">location&lt;/span> &lt;span class="n">longitude&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1"># 經度&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">$&lt;/span>&lt;span class="n">geoip2_data_country_iso_code&lt;/span> &lt;span class="n">country&lt;/span> &lt;span class="n">iso_code&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1"># 國家ISO代碼&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">include&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">mime&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">types&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">default_type&lt;/span> &lt;span class="nv">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">octet&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nv">stream&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">include&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">mime&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">types&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">default_type&lt;/span> &lt;span class="n">application&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">octet&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">stream&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="nv">log_format&lt;/span> &lt;span class="nv">main&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_addr&lt;/span>&lt;span class="s1"> - &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_user&lt;/span>&lt;span class="s1"> [&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">time_local&lt;/span>&lt;span class="s1">] &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request&lt;/span>&lt;span class="s1">&amp;#34; &amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">status&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">body_bytes_sent&lt;/span>&lt;span class="s1"> &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_referer&lt;/span>&lt;span class="s1">&amp;#34; &amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_user_agent&lt;/span>&lt;span class="s1">&amp;#34; &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_x_forwarded_for&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="nv">log_format&lt;/span> &lt;span class="nv">custom&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_addr&lt;/span>&lt;span class="s1"> - &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_user&lt;/span>&lt;span class="s1"> [&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">time_local&lt;/span>&lt;span class="s1">]&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request&lt;/span>&lt;span class="s1">&amp;#34; &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">status&lt;/span>&lt;span class="s1"> &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">body_bytes_sent&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_referer&lt;/span>&lt;span class="s1">&amp;#34; &lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">host&lt;/span>&lt;span class="s1"> &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_user_agent&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request_time&lt;/span>&lt;span class="s1">&amp;#34; &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">upstream_connect_time&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">#&lt;/span> &lt;span class="s1">&amp;#39;&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_name&lt;/span>&lt;span class="s1">&amp;#34; &amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_iso_code&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># log_format main &amp;#39;$remote_addr - $remote_user [$time_local] &amp;#34;$request&amp;#34; &amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># &amp;#39;$status $body_bytes_sent &amp;#34;$http_referer&amp;#34; &amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># &amp;#39;&amp;#34;$http_user_agent&amp;#34; &amp;#34;$http_x_forwarded_for&amp;#34;&amp;#39;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># log_format custom &amp;#39;$remote_addr - $remote_user [$time_local]&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># &amp;#39;&amp;#34;$request&amp;#34; $status $body_bytes_sent&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># &amp;#39;&amp;#34;$http_referer&amp;#34; $host &amp;#34;$http_user_agent&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># &amp;#39;&amp;#34;$request_time&amp;#34; &amp;#34;$upstream_connect_time&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># &amp;#39;&amp;#34;$geoip2_data_city_name&amp;#34; &amp;#34;$geoip2_data_country_iso_code&amp;#34;&amp;#39;;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">log_format&lt;/span> &lt;span class="nv">main2&lt;/span> &lt;span class="s1">&amp;#39;{&amp;#34;remote_addr&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_addr&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;remote_user&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">remote_user&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;time&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">time_local&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;request&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;status&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">status&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;body_bytes_sent&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">body_bytes_sent&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;http_referer&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_referer&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;host&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">host&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;http_user_agent&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">http_user_agent&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;request_time&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">request_time&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;upstream_connect_time&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">upstream_connect_time&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_city_name&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_name&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_country_iso_code&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_country_iso_code&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_city_latitude&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_latitude&lt;/span>&lt;span class="s1">&amp;#34;,&amp;#34;geoip2_data_city_longitude&amp;#34;:&amp;#34;&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="nv">geoip2_data_city_longitude&lt;/span>&lt;span class="s1">&amp;#34;}&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">log_format&lt;/span> &lt;span class="n">main2&lt;/span> &lt;span class="s1">&amp;#39;{&amp;#34;remote_addr&amp;#34;:&amp;#34;$remote_addr&amp;#34;,&amp;#34;remote_user&amp;#34;:&amp;#34;$remote_user&amp;#34;,&amp;#34;time&amp;#34;:&amp;#34;$time_local&amp;#34;,&amp;#34;request&amp;#34;:&amp;#34;$request&amp;#34;,&amp;#34;status&amp;#34;:&amp;#34;$status&amp;#34;,&amp;#34;body_bytes_sent&amp;#34;:&amp;#34;$body_bytes_sent&amp;#34;,&amp;#34;http_referer&amp;#34;:&amp;#34;$http_referer&amp;#34;,&amp;#34;host&amp;#34;:&amp;#34;$host&amp;#34;,&amp;#34;http_user_agent&amp;#34;:&amp;#34;$http_user_agent&amp;#34;,&amp;#34;request_time&amp;#34;:&amp;#34;$request_time&amp;#34;,&amp;#34;upstream_connect_time&amp;#34;:&amp;#34;$upstream_connect_time&amp;#34;,&amp;#34;geoip2_data_city_name&amp;#34;:&amp;#34;$geoip2_data_city_name&amp;#34;,&amp;#34;geoip2_data_country_iso_code&amp;#34;:&amp;#34;$geoip2_data_country_iso_code&amp;#34;,&amp;#34;geoip2_data_city_latitude&amp;#34;:&amp;#34;$geoip2_data_city_latitude&amp;#34;,&amp;#34;geoip2_data_city_longitude&amp;#34;:&amp;#34;$geoip2_data_city_longitude&amp;#34;}&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">access_log&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">log&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">access&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">log&lt;/span> &lt;span class="nv">main2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">access_log&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nb">log&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">access&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">log&lt;/span> &lt;span class="n">main2&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">sendfile&lt;/span> &lt;span class="nv">on&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cp">#tcp_nopush on;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sendfile&lt;/span> &lt;span class="n">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#tcp_nopush on;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">keepalive_timeout&lt;/span> &lt;span class="mi">65&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">keepalive_timeout&lt;/span> &lt;span class="mi">65&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cp">#gzip on;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#gzip on;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">include&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="nv">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nv">conf&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">d&lt;/span>&lt;span class="o">/*&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nv">conf&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">include&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="n">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">conf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">d&lt;/span>&lt;span class="o">/*.&lt;/span>&lt;span class="n">conf&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
@@ -1361,25 +1361,25 @@ Tags: Database, Mongodb&lt;/p>
 &lt;/span>&lt;span class="lnt">19
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">version: &amp;#39;3.5&amp;#39;
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">version&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;3.5&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">services:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> nginx:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> image: mynginx:latest
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> container_name: mynginx
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ports:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - 8081:80
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> volumes:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - ./nginx/log:/var/log/nginx
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - ./GeoLite/GeoLite2-City.mmdb:/usr/share/GeoIP
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> networks:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - nginx_network
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">services&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">nginx&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">image&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">mynginx&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">container_name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">mynginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ports&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">-&lt;/span> &lt;span class="mi">8081&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">80&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">volumes&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">-&lt;/span> &lt;span class="o">./&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">config&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">conf&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">etc&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">-&lt;/span> &lt;span class="o">./&lt;/span>&lt;span class="n">nginx&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nb">log&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">var&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nb">log&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">-&lt;/span> &lt;span class="o">./&lt;/span>&lt;span class="n">GeoLite&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">GeoLite2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">City&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mmdb&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">usr&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">share&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">GeoIP&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">networks&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">-&lt;/span> &lt;span class="n">nginx_network&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">networks:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> nginx_network
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name: nginx_network
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> driver: bridge
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">networks&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">nginx_network&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">name&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">nginx_network&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">driver&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">bridge&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="step6-run-mynginx">Step6. Run mynginx&lt;/h2>
@@ -1391,7 +1391,7 @@ Tags: Database, Mongodb&lt;/p>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker-compose up -d
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Chinese Test</title><link>https://blog.rock86.space/p/test-chinese/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/test-chinese/</guid><description>&lt;img src="https://blog.rock86.space/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试&lt;/h2>
+&lt;/div></description></item><item><title>Chinese Test</title><link>https://blog.myrockspace86.net/p/test-chinese/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/test-chinese/</guid><description>&lt;img src="https://blog.myrockspace86.net/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试&lt;/h2>
 &lt;p>而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p>
 &lt;p>奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p>
 &lt;h2 id="引用">引用&lt;/h2>
@@ -1404,38 +1404,38 @@ Tags: Database, Mongodb&lt;/p>
 >最暖的憂傷 - 田馥甄&lt;/a>&lt;/em>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="图片">图片&lt;/h2>
-&lt;p>&lt;img src="https://blog.rock86.space/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg"
+&lt;p>&lt;img src="https://blog.myrockspace86.net/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg"
 width="667"
 height="1000"
-srcset="https://blog.rock86.space/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_480x0_resize_q75_box.jpg 480w, https://blog.rock86.space/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1024x0_resize_q75_box.jpg 1024w"
+srcset="https://blog.myrockspace86.net/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_480x0_resize_q75_box.jpg 480w, https://blog.myrockspace86.net/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Florian Klauer on Unsplash"
 class="gallery-image"
 data-flex-grow="66"
 data-flex-basis="160px"
-> &lt;img src="https://blog.rock86.space/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg"
+> &lt;img src="https://blog.myrockspace86.net/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg"
 width="1000"
 height="667"
-srcset="https://blog.rock86.space/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_480x0_resize_q75_box.jpg 480w, https://blog.rock86.space/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_1024x0_resize_q75_box.jpg 1024w"
+srcset="https://blog.myrockspace86.net/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_480x0_resize_q75_box.jpg 480w, https://blog.myrockspace86.net/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Luca Bravo on Unsplash"
 class="gallery-image"
 data-flex-grow="149"
 data-flex-basis="359px"
 >&lt;/p>
-&lt;p>&lt;img src="https://blog.rock86.space/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg"
+&lt;p>&lt;img src="https://blog.myrockspace86.net/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg"
 width="1000"
 height="750"
-srcset="https://blog.rock86.space/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_480x0_resize_q75_box.jpg 480w, https://blog.rock86.space/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_1024x0_resize_q75_box.jpg 1024w"
+srcset="https://blog.myrockspace86.net/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_480x0_resize_q75_box.jpg 480w, https://blog.myrockspace86.net/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Helena Hertz on Unsplash"
 class="gallery-image"
 data-flex-grow="133"
 data-flex-basis="320px"
-> &lt;img src="https://blog.rock86.space/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg"
+> &lt;img src="https://blog.myrockspace86.net/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg"
 width="667"
 height="1000"
-srcset="https://blog.rock86.space/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_480x0_resize_q75_box.jpg 480w, https://blog.rock86.space/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_1024x0_resize_q75_box.jpg 1024w"
+srcset="https://blog.myrockspace86.net/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_480x0_resize_q75_box.jpg 480w, https://blog.myrockspace86.net/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Hudai Gayiran on Unsplash"
 class="gallery-image"
@@ -1455,7 +1455,7 @@ data-flex-basis="160px"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>相册语法来自 &lt;a class="link" href="https://typlog.com/" target="_blank" rel="noopener"
->Typlog&lt;/a>&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>https://blog.rock86.space/p/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/markdown-syntax-guide/</guid><description>&lt;img src="https://blog.rock86.space/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+>Typlog&lt;/a>&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>https://blog.myrockspace86.net/p/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/markdown-syntax-guide/</guid><description>&lt;img src="https://blog.myrockspace86.net/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
 &lt;h2 id="headings">Headings&lt;/h2>
 &lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
 &lt;h1 id="h1">H1&lt;/h1>
@@ -1671,98 +1671,7 @@ alt="Google"
 >talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Rich Content</title><link>https://blog.rock86.space/p/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
->Built-in Shortcodes&lt;/a> for rich content, along with a &lt;a class="link" href="https://gohugo.io/about/hugo-and-gdpr/" target="_blank" rel="noopener"
->Privacy Config&lt;/a> and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
-&lt;hr>
-&lt;h2 id="youtube-privacy-enhanced-shortcode">YouTube Privacy Enhanced Shortcode&lt;/h2>
-&lt;div class="video-wrapper">
-&lt;iframe loading="lazy"
-src="https://www.youtube.com/embed/ZJthWmvUzzc"
-allowfullscreen
-title="YouTube Video"
->
-&lt;/iframe>
-&lt;/div>
-&lt;!-- raw HTML omitted -->
-&lt;hr>
-&lt;h2 id="twitter-simple-shortcode">Twitter Simple Shortcode&lt;/h2>
-&lt;style type="text/css">
-.twitter-tweet {
-font: 14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-border-left: 4px solid #2b7bb9;
-padding-left: 1.5em;
-color: #555;
-}
-.twitter-tweet a {
-color: #2b7bb9;
-text-decoration: none;
-}
-blockquote.twitter-tweet a:hover,
-blockquote.twitter-tweet a:focus {
-text-decoration: underline;
-}
-&lt;/style>
-&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">“In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”&lt;br>— Jan Tschichold &lt;a href="https://t.co/gcv7SrhvJb">pic.twitter.com/gcv7SrhvJb&lt;/a>&lt;/p>&amp;mdash; Graphic Design History (@DesignReviewed) &lt;a href="https://twitter.com/DesignReviewed/status/1085870671291310081?ref_src=twsrc%5Etfw">January 17, 2019&lt;/a>&lt;/blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;hr>
-&lt;h2 id="vimeo-simple-shortcode">Vimeo Simple Shortcode&lt;/h2>
-&lt;style>
-.__h_video {
-position: relative;
-padding-bottom: 56.23%;
-height: 0;
-overflow: hidden;
-width: 100%;
-background: #000;
-}
-.__h_video img {
-width: 100%;
-height: auto;
-color: #000;
-}
-.__h_video .play {
-height: 72px;
-width: 72px;
-left: 50%;
-top: 50%;
-margin-left: -36px;
-margin-top: -36px;
-position: absolute;
-cursor: pointer;
-}
-&lt;/style>
-&lt;div class="s_video_simple __h_video">
-&lt;a href="https://vimeo.com/4.8912912e&amp;#43;07" rel="noopener" target="_blank">
-&lt;img src="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640" srcset="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 1x, https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 2x" alt="Sing Jan Swing - Kinetic Type">
-&lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div>
-&lt;h2 id="bilibilibi-shortcode">bilibilibi Shortcode&lt;/h2>
-&lt;div class="video-wrapper">
-&lt;iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;aid=498363026"
-scrolling="no"
-frameborder="no"
-framespacing="0"
-allowfullscreen="true"
->
-&lt;/iframe>
-&lt;/div>
-&lt;h2 id="gist-shortcode">Gist Shortcode&lt;/h2>
-&lt;script type="application/javascript" src="https://gist.github.com/spf13/7896402.js">&lt;/script>
-&lt;h2 id="gitlab-snippets-shortcode">Gitlab Snippets Shortcode&lt;/h2>
-&lt;script
-type="application/javascript"
-src="https://gitlab.com/-/snippets/2349278.js"
->&lt;/script>
-&lt;h2 id="quote-shortcode">Quote Shortcode&lt;/h2>
-&lt;p>Stack adds a &lt;code>quote&lt;/code> shortcode. For example:&lt;/p>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>A famous person, &lt;/span>&lt;a href="https://en.wikipedia.org/wiki/Book">&lt;cite>The book they wrote&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;a href="https://en.wikipedia.org/wiki/Book">&lt;cite>Anonymous book&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;cite>Some book&lt;/cite>&lt;/span>&lt;/blockquote>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>Somebody&lt;/span>&lt;cite>&lt;/cite>&lt;/span>&lt;/blockquote></description></item><item><title>Placeholder Text</title><link>https://blog.rock86.space/p/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/placeholder-text/</guid><description>&lt;img src="https://blog.rock86.space/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" />&lt;p>Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p>
+&lt;/div></description></item><item><title>Placeholder Text</title><link>https://blog.myrockspace86.net/p/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/placeholder-text/</guid><description>&lt;img src="https://blog.myrockspace86.net/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" />&lt;p>Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p>
 &lt;p>Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p>
 &lt;ol>
 &lt;li>Exierant elisi ambit vivere dedere&lt;/li>
@@ -1785,7 +1694,7 @@ src="https://gitlab.com/-/snippets/2349278.js"
 &lt;h2 id="mane-refeci-capiebant-unda-mulcebat">Mane refeci capiebant unda mulcebat&lt;/h2>
 &lt;p>Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong>Faces illo pepulere&lt;/strong> tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p>
 &lt;p>Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p>
-&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item><item><title>Math Typesetting</title><link>https://blog.rock86.space/p/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/math-typesetting/</guid><description>&lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
+&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item><item><title>Math Typesetting</title><link>https://blog.myrockspace86.net/p/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/math-typesetting/</guid><description>&lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
 &lt;p>In this example we will be using &lt;a class="link" href="https://katex.org/" target="_blank" rel="noopener"
 >KaTeX&lt;/a>&lt;/p>
 &lt;ul>
@@ -1816,7 +1725,7 @@ src="https://gitlab.com/-/snippets/2349278.js"
 &lt;p>Block math:
 $$
 \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
-$$&lt;/p></description></item><item><title>Emoji Support</title><link>https://blog.rock86.space/p/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.rock86.space/p/emoji-support/</guid><description>&lt;img src="https://blog.rock86.space/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" />&lt;p>Emoji can be enabled in a Hugo project in a number of ways.&lt;/p>
+$$&lt;/p></description></item><item><title>Emoji Support</title><link>https://blog.myrockspace86.net/p/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/emoji-support/</guid><description>&lt;img src="https://blog.myrockspace86.net/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" />&lt;p>Emoji can be enabled in a Hugo project in a number of ways.&lt;/p>
 &lt;p>The &lt;a class="link" href="https://gohugo.io/functions/emojify/" target="_blank" rel="noopener"
 >&lt;code>emojify&lt;/code>&lt;/a> function can be called directly in templates or &lt;a class="link" href="https://gohugo.io/templates/shortcode-templates/#inline-shortcodes" target="_blank" rel="noopener"
 >Inline Shortcodes&lt;/a>.&lt;/p>
