@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on RockChang's Blog</title><link>https://blog.myrockspace86.net/post/</link><description>Recent content in Posts on RockChang's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.myrockspace86.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Pod resource resize 功能設定筆記</title><link>https://blog.myrockspace86.net/p/pod-resource-resize-%E5%8A%9F%E8%83%BD%E8%A8%AD%E5%AE%9A%E7%AD%86%E8%A8%98/</link><pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/pod-resource-resize-%E5%8A%9F%E8%83%BD%E8%A8%AD%E5%AE%9A%E7%AD%86%E8%A8%98/</guid><description>&lt;p>kubernetes v1.27 的新功能 &lt;a class="link" href="https://kubernetes.io/blog/2023/05/12/in-place-pod-resize-alpha/" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on RockChang's Blog</title><link>https://blog.myrockspace86.net/post/</link><description>Recent content in Posts on RockChang's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.myrockspace86.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>k8s 指定cronjob執行時區 k8s 1.27</title><link>https://blog.myrockspace86.net/p/k8s-%E6%8C%87%E5%AE%9Acronjob%E5%9F%B7%E8%A1%8C%E6%99%82%E5%8D%80-k8s-1.27/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/k8s-%E6%8C%87%E5%AE%9Acronjob%E5%9F%B7%E8%A1%8C%E6%99%82%E5%8D%80-k8s-1.27/</guid><description>&lt;p>kubernetes v1.27 的功能 &lt;a class="link" href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#time-zones/" target="_blank" rel="noopener"
+>連結&lt;/a>&lt;/p>
+&lt;p>指定cronjob 執行時的時區&lt;/p>
+&lt;p>有效的時區參考 &lt;a class="link" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener"
+>https://en.wikipedia.org/wiki/List_of_tz_database_time_zones&lt;/a>&lt;/p>
+&lt;h2 id="設定方式">設定方式&lt;/h2>
+&lt;p>增加 &lt;code>.spec.timeZone&lt;/code>&lt;/p>
+&lt;p>範例&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">apiVersion: batch/v1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kind: CronJob
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">metadata:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name: hello
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">spec:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> timeZone: Asia/Taipei
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> schedule: &amp;#34;47 11 * * *&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> jobTemplate:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> spec:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> template:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> spec:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> containers:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: hello
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> image: busybox:1.28
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> imagePullPolicy: IfNotPresent
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> command:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - /bin/sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - -c
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - date; echo Hello from the Kubernetes cluster
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> restartPolicy: OnFailure
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Pod resource resize 功能設定筆記</title><link>https://blog.myrockspace86.net/p/pod-resource-resize-%E5%8A%9F%E8%83%BD%E8%A8%AD%E5%AE%9A%E7%AD%86%E8%A8%98/</link><pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.myrockspace86.net/p/pod-resource-resize-%E5%8A%9F%E8%83%BD%E8%A8%AD%E5%AE%9A%E7%AD%86%E8%A8%98/</guid><description>&lt;p>kubernetes v1.27 的新功能 &lt;a class="link" href="https://kubernetes.io/blog/2023/05/12/in-place-pod-resize-alpha/" target="_blank" rel="noopener"
 >連結&lt;/a>&lt;/p>
 &lt;p>變更pod resource的 request 或 limit 時，不須重啟Pod**&lt;/p>
 &lt;h2 id="測試環境">測試環境&lt;/h2>
